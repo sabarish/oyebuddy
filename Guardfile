@@ -30,8 +30,7 @@ guard :minitest, spring: true, all_on_start: false do
     'test/integration/users_signup_test.rb'
   end
   watch(%r{app/views/users/*}) do
-    resource_tests('users') +
-    ['test/integration/microposts_interface_test.rb']
+    resource_tests('users')
   end
 end
 
