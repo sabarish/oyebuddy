@@ -68,6 +68,10 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   private
 
     # Converts email to all lower-case.
