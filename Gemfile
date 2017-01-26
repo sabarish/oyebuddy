@@ -20,6 +20,7 @@ gem 'mysql2',                  '0.3.14'
 gem 'sdoc',                    '0.4.0', group: :doc
 
 group :production do
+  gem 'puma'
   gem 'rails_12factor'
 end
 
