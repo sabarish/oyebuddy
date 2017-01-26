@@ -1,10 +1,5 @@
-<h1>OyeBuddy</h1>
-
 <p>Hi <%= @user.name %>,</p>
 
 <p>
-Welcome to OyeBuddy! Click on the link below to activate your account:
+Welcome to OyeBuddy! Click <%= link_to "here", edit_account_activation_url(@user.activation_token, email: @user.email) %> to activate your account and start creating your own groups.
 </p>
-
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token, 
-                                                    email: @user.email) %>
