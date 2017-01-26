@@ -19,6 +19,10 @@ gem 'mysql'
 gem 'mysql2',                  '0.3.14'
 gem 'sdoc',                    '0.4.0', group: :doc
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
