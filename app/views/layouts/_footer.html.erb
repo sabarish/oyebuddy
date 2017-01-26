@@ -1,8 +1,17 @@
-<footer class="footer">
-  <nav>
-    <ul>
-      <li><%= link_to "About",   about_path %></li>
-      <li><%= link_to "Contact Us", contact_path %></li>
-    </ul>
-  </nav>
-</footer>
+<nav class="navbar navbar-fixed-bottom navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavfooter">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavfooter">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "About",   about_path %></li>
+        <li><%= link_to "Contact Us", contact_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
