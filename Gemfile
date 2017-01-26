@@ -18,9 +18,9 @@ gem 'jbuilder',                '2.2.3'
 gem 'mysql'
 gem 'mysql2',                  '0.3.14'
 gem 'sdoc',                    '0.4.0', group: :doc
+gem 'puma'
 
 group :production do
-  gem 'puma'
   gem 'rails_12factor'
 end
 
