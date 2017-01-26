@@ -13,7 +13,7 @@ default: &default
 
 development:
   <<: *default
-  database: buddy_development
+  database: oyebuddy_development
   username: root
   password:
 
@@ -29,6 +29,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: buddy_production
+  database: oyebuddy_production
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
