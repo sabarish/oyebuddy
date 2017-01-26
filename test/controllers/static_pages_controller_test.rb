@@ -8,18 +8,6 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "OyeBuddy"
   end
 
-  test "should get help" do
-    get :help
-    assert_response :success
-    assert_select "title", "Help | OyeBuddy"
-  end
-
-  test "should get about" do
-    get :about
-    assert_response :success
-    assert_select "title", "About | OyeBuddy"
-  end
-
   test "should get contact" do
     get :contact
     assert_response :success
