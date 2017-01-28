@@ -32,6 +32,9 @@ textarea {
   }
 }
 
+.font-normal{
+  font-weight: normal !important;
+}
 
 /* typography */
 
@@ -264,6 +267,10 @@ input {
 
 .p-xl {
   padding: 40px;
+}
+
+.p-h-xxs {
+  padding: 5px 0;
 }
 
 .p-w-xs {

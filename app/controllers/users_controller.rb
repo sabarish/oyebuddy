@@ -19,6 +19,8 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    is_user_valid= @user.valid?
+    @captcha_error = 'captcha confirmation failed' unless verify_recaptcha(model: @user)
     if verify_recaptcha(model: @user) && @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
@@ -49,6 +51,7 @@ class UsersController < ApplicationController
   private
     
     def user_params
+      params[:user][:password_confirmation] = nil if params[:user][:password_confirmation].blank?
       params.require(:user).permit(:first_name, :last_name, :email, :password,
                                    :password_confirmation)
     end

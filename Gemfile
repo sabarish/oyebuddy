@@ -20,6 +20,7 @@ gem 'mysql2',                  '0.3.14'
 gem 'sdoc',                    '0.4.0', group: :doc
 gem 'puma'
 gem "recaptcha",     require: "recaptcha/rails"
+gem 'simple_form'
 
 group :production do
   gem 'rails_12factor'

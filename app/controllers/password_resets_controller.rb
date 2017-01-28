@@ -14,7 +14,11 @@ class PasswordResetsController < ApplicationController
       flash[:info] = "Email sent with password reset instructions"
       redirect_to root_url
     else
-      flash.now[:danger] = "Email address not found"
+      flash.now[:danger] = "Email address not found."
+      unless verify_recaptcha(model: @user)
+        flash.delete(:recaptcha_error)
+        @captcha_error = "captcha confirmation failed."
+      end
       render 'new'
     end
   end

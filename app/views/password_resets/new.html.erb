@@ -3,14 +3,10 @@
 
 <div class="row-fluid">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-      
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-      
-      <div class='m-b'><%= recaptcha_tags %></div>
-
-      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <%= simple_form_for(:password_reset, url: password_resets_path) do |f| %>
+      <%= f.input :email %>
+      <div class='m-b'><%= recaptcha_tags %><span class="help-block pull-left" style="color:#a94442;"><%=@captcha_error%></span></div>
+      <%= f.button :submit, "Submit", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

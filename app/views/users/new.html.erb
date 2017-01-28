@@ -3,27 +3,14 @@
 
 <div class="row-fluid">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-    
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: 'form-control' %>
-      
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: 'form-control' %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-      
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-      
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-      
-      <div class='m-b'><%= recaptcha_tags %></div>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+      <div class='m-b'><%= recaptcha_tags %><span class="help-block pull-left" style="color:#a94442;"><%=@captcha_error%></span></div>
+      <%= f.button :submit, "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
