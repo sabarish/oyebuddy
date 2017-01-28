@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   private
     
     def user_params
-      params[:user][:password_confirmation] = nil if params[:user][:password_confirmation].blank?
+      params[:user][:password_confirmation] = nil if @user.present? && params[:user][:password_confirmation].blank?
       params.require(:user).permit(:first_name, :last_name, :email, :password,
                                    :password_confirmation)
     end
