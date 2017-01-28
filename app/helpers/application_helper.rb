@@ -1,5 +1,3 @@
-require 'dotenv'
-
 module ApplicationHelper
   include Recaptcha::ClientHelper
 
