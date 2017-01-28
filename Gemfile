@@ -19,12 +19,14 @@ gem 'mysql'
 gem 'mysql2',                  '0.3.14'
 gem 'sdoc',                    '0.4.0', group: :doc
 gem 'puma'
+gem "recaptcha",     require: "recaptcha/rails"
 
 group :production do
   gem 'rails_12factor'
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
